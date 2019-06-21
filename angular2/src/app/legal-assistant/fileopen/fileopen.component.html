@@ -1,0 +1,110 @@
+<!--
+<p>
+  fileopen works!
+</p>
+-->
+<div *ngIf="!isDetail">
+<br>
+
+<div class="row">
+  <div class="col-sm-2">
+    
+  </div>
+  <div class="col-sm-8">
+   <div>
+  <div align="center" class="form-group">
+      <label for="file-upload" class="custom-file-upload textfont">
+          <i class="fa fa-cloud-upload"></i> 選擇檔案
+        </label>
+      <input type="file" class="uploadfile"
+             id="file-upload" accept=".txt"
+             (change)="handleFileInput($event.target.files)">
+  </div>
+  <div align="center" class="textfont">
+    <p *ngIf="isUpload && isActive" class="alert alert-success" role="alert">上傳成功</p>
+  <p *ngIf="!isUpload && isActive" class="alert alert-danger" role="alert">上傳失敗或檔案格式錯誤(only .txt)</p>
+  <button class="textfont" type="button"  (click)="uploadFileToActivity()">上傳</button>
+  <button class="textfont" type="button"  (click)="uploadFileToActivity2()">判決書搜尋</button>
+  <br>
+  <br>
+  <p *ngIf="!isComplete && isActive" class="loader"></p>
+  </div>
+  <br>
+</div>
+  </div>
+  <div class="col-sm-2">
+  </div>
+</div>
+<br>
+
+<div class="row" *ngIf="isComplete2"><!---->
+  <div class="col-sm-2">
+    <!--textarea  style=" height: 400px; width: 150px" placeholder="歷史紀錄" name="history"></textarea-->
+  </div>
+  <div class="col-sm-8 content" >
+    
+    <h3 class="textfont">內容相近之判決</h3><br>
+      <div align="center">
+
+          <button class="textfont" id="1" (click)="pagechange(-1)" >上一頁</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="value" style="width: 50px" [(ngModel)]="nowpage" id="search" placeholder="Search..." />
+          <button class="textfont" id="2" (click)="pagechange(0)" >跳轉</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="textfont" id="3" (click)="pagechange(1)" >下一頁</button>
+      </div>
+        <br>
+    <div placeholder="判決書結果" name="result">
+      <table class="table">
+        <tr>
+            <th>勝敗</th>
+            <th>字號</th>
+            <th>日期</th> 
+            <th>案由</th>
+            <th>相似度</th>
+            <th>內文</th>
+        </tr>
+        <tr *ngFor="let judge of myjudge; let i = index">
+          <td *ngIf="judge.WL=='勝訴'" class="textfont" style="color:green">{{judge.WL}}</td>
+          <td *ngIf="judge.WL=='敗訴'" class="textfont" style="color:red">{{judge.WL}}</td>
+          <td class="textfont">{{judge.NUM}}</td>
+          <td class="textfont">{{judge.Date}}</td>
+          <td class="textfont">{{judge.Reason}}</td>
+          <td class="textfont">{{judge.Vec}}</td>
+          <td><button (click)="SeeDetails(i)">查看內文</button></td>
+        </tr>
+    </table>
+    </div>
+  </div>
+  <div class="col-sm-2">
+    <textarea disabled="disabled" *ngIf="rate>=0.5" readonly style=" height: auto; width: auto; color:green; font-weight:bold" name="answer">勝訴比率: {{myrate}}</textarea>
+    <textarea disabled="disabled" *ngIf="rate<0.5"  readonly style=" height: auto; width: auto; color:red; font-weight:bold" name="answer">勝訴比率: {{myrate}}</textarea>
+    <br>
+  </div>
+</div>
+</div>
+<br>
+<br>
+<div class="row" *ngIf="isDetail">
+    <div class="col-11"></div>
+    <div class="col-1">
+          <button (click)=Backpage()>返回</button>
+        </div>
+  </div>
+<div class="row" *ngIf="isDetail">
+    <br>
+<div class="row container-fluid">
+  <div class="col-md-9">
+    <h3 style=" font-family: DFKai-sb;">裁判內文</h3>
+    <pre class="content" style=" font-family: DFKai-sb; font-size: 3vmin;" align="center">{{nowjudge.Content}}</pre>
+  </div>
+  <div class="col-md-3">
+      <h3 style=" font-family: DFKai-sb;">歷審判決</h3>
+    <pre class="content" style=" font-family: DFKai-sb; font-size: 3vmin;" align="left">{{nowjudge.His}}</pre>
+    <br>
+    <h3>相關法條</h3>
+    <pre class="content" style=" font-family: DFKai-sb; font-size: 3vmin;" align="left" >{{nowjudge.Law}}</pre>
+  </div>
+  
+</div>
+
+  </div>
+

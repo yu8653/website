@@ -1,0 +1,98 @@
+body {
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", Verdana, Arial, sans-serif;
+}
+
+h1 {
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", 'Open Sans Condensed', sans-serif;
+  color: black;
+  text-align: center;
+  font-size: 4vmin;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", 'Open Sans Condensed', sans-serif;
+  font-size: 4vmin;
+}
+
+input,
+button,
+select,
+textarea,
+span {
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", Arial, Helvetica, sans-serif;
+}
+
+.content {
+  text-align: center;
+  font-size: 3vmin;
+}
+
+.row {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron.jumbotron-fluid {
+  background-image: url(assets/image/ai.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.box-2 {
+  padding: 1%;
+  width: 50%;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.box-2 p {
+  color: #fff;
+  font-family: '微軟正黑體';
+  text-align: center;
+  font-size: 3vmin;
+}
+
+.box-2 {
+  background: rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+}
+
+.bg-1 {
+  background-image: url(../../assets/image/16bg4.png);
+  background-repeat: repeat;
+}
+
+.bg-2 {
+  padding: 1%;
+  width: 80%;
+  margin-bottom: auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.textfont {
+  font-family: DFKai-sb;
+
+}
+
+.aboutUs {
+  padding: 100px;
+  background-image: url('/assets/image/about us.png');
+  background-size: cover;
+  height: auto;
+  width: auto;
+}
+
+.bottom {
+  background-color: rgba(0, 50, 100, 0.5);
+  
+}

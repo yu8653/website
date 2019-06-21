@@ -1,0 +1,179 @@
+body {
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", Verdana, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", 'Open Sans Condensed', sans-serif;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", Arial, Helvetica, sans-serif;
+}
+
+
+.content{
+  height: auto;
+  width:auto;
+  border: 5px groove;
+}
+
+::-webkit-file-upload-button {
+  background: white;
+  color: black;
+}
+
+.textfont{
+  font-family: DFKai-sb;
+}
+
+.uploadfile {
+  position: fixed;
+  right: 100%;
+  bottom: 100%;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.btn {}
+
+input:focus,
+textarea:focus ,
+button:focus{
+
+  outline: none;
+}
+
+textarea {
+  border: 0;
+  background-color: transparent;
+  /*scrollbar-arrow-color:yellow;  
+    scrollbar-base-color:lightsalmon;  
+    overflow: hidden;*/
+  color: #666464;
+  height: auto;
+  border: 5px groove;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.history {
+
+  height: 400px;
+  width: 100%;
+}
+
+.result {
+
+  height: 400px;
+  width: 100%;
+}
+
+.answer {
+
+  height: 200px;
+  width: 100%;
+}
+
+.law {
+
+  height: 200px;
+  width: 100%;
+}
+
+body {
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", Verdana, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", 'Open Sans Condensed', sans-serif;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", Arial, Helvetica, sans-serif;
+}
+
+textarea:focus,
+button:focus {
+
+  outline: none;
+}
+
+textarea {
+  border: 0;
+  background-color: transparent;
+  color: #666464;
+  height: auto;
+  width: 100%;
+  border: 5px groove;
+}
+
+.content {
+  height: auto;
+  width: 100%;
+  border: 5px groove;
+  font-family: Meiryo, "微軟正黑體", "Microsoft JhengHei", 'Open Sans Condensed', sans-serif;
+  color: #555
+}
+
+button {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-family: DFKai-sb;
+  color: #ffffff;
+  font-size: 2vmin;
+  background: #333;
+  padding: 1px 10px 1px 10px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #eee;
+  background-image: -webkit-linear-gradient(top, #eee, #eee);
+  background-image: -moz-linear-gradient(top, #eee, #eee);
+  background-image: -ms-linear-gradient(top, #eee, #eee);
+  background-image: -o-linear-gradient(top, #eee, #eee);
+  background-image: linear-gradient(to bottom, #eee, #eee);
+  text-decoration: none;
+  color: black;
+}

@@ -1,0 +1,9 @@
+.textfont{
+	font-size: 3vmin;
+	font-family: DFKai-sb;
+}
+
+input:focus,
+button:focus{
+    outline: none;
+}

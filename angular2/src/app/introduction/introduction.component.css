@@ -1,0 +1,60 @@
+body {
+
+  font-family: DFKai-sb;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  font-family: DFKai-sb;
+}
+
+input,
+button,
+select,
+textarea {
+
+  font-family: DFKai-sb;
+}
+
+.textfont {
+  font-family: DFKai-sb;
+}
+
+.bg-2 {
+  padding: 1%;
+  width: 80%;
+  margin-bottom: auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+}
+.bg{
+  background-image: url(../../assets/image/16bg4.png);
+  background-repeat: repeat;
+}
+
+@keyframes typing {
+
+  from {
+    width: 0
+  }
+}
+
+h3 {
+
+  width: 30em;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  animation: typing 2s steps(30);
+
+  animation-iteration-count: infinite;
+
+  animation-direction: alternate;
+}

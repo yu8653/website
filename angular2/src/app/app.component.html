@@ -1,0 +1,125 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <span class="navbar-brand">
+      <img src="/assets/image/logo.png" alt="Logo" style="width:40px;">
+  </span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <span class="glyphicon glyphicon-home"></span>
+        <a class="nav-link textfont" [routerLink]="['/']" >首頁</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link textfont" [routerLink]="['/legal-assistant']">法務助手</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link textfont" [routerLink]="['/introduction']">簡介</a>
+      </li>
+      <!--
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']">登入</a>
+      </li>
+    -->
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf=isLogin>
+        <button type="button" class="btn bg-dark textfont" style="color: #fff; font-size: 3vmin" data-toggle="modal" data-target="#login">登入</button>
+      </li>
+      <li class="nav-item" *ngIf=isLogin>
+          <button type="button" class="btn bg-dark textfont" style="color: #fff; font-size: 3vmin" data-toggle="modal" data-target="#signup">註冊</button>
+        </li>
+      <li class="nav-item" *ngIf=isLogout>
+        <button (click)="logout()" class="btn bg-dark textfont" style="color: #fff; font-size: 3vmin">登出</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<!-- The Modal -->
+<div class="modal fade" id="login">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title textfont">登入</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form #myloginform="ngForm" (ngSubmit)="login(myloginform)">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input [(ngModel)]="myEmail" type="email" class="form-control" id="email" name="account" placeholder="Email" required minlength="5" pattern="^[a-zA-Z0-9.!#$%&』*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$
+            " #iemail="ngModel">
+          </div>
+          <div class="errors">
+            <p *ngIf="iemail.errors.minlength textfont">最少要 5 個字</p>
+            <!--p *ngIf="iemail.errors.pattern">請輸入正確的 Email 格式</p-->
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input ngModel type="password" class="form-control" id="password" name="password" placeholder="Password">
+          </div>
+          <div class="errors">
+            <!--p>請輸入密碼</p-->
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ngModel id="remember" name="remember" type="checkbox"> Remember me
+            </label>
+          </div>
+          <p *ngIf="isLogin && isActive2" class="alert alert-danger textfont" role="alert">帳號或密碼錯誤</p>
+          <p *ngIf="!isLogin && isActive2" class="alert alert-success textfont" role="alert">登入成功</p>
+          <button type="submit" class="btn btn-primary textfont">登入</button>
+        </form>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="signup">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title textfont">註冊</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form #mysignupform="ngForm" (ngSubmit)="signup(mysignupform)">
+          <div class="form-group">
+            <label for="username">Name</label><br>
+            <input ngModel required="required" class="form-control" type="text" name="username" #fname="ngModel">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label><br>
+            <input ngModel required="required"  class="form-control" type="text" name="account" #fiemail="ngModel">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label><br>
+            <input ngModel required="required"  class="form-control" type="password" name="password">
+          </div>
+          <p *ngIf="!isSignup && isActive" class="alert alert-danger textfont" role="alert">此email已註冊過 </p>
+          <p *ngIf="isSignup && isActive" class="alert alert-success textfont" role="alert">註冊成功 可進行登入 </p>          
+          <button type="submit" class="btn btn-primary textfont">註冊</button>
+        </form>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<app-copyright></app-copyright>
